@@ -1,0 +1,9 @@
+SRC = $(ROOT)/src
+
+SRC_OUT = libschoco.a 
+
+LX = ld
+
+LDFLAGS = -r
+
+!ld = |> $(LX) $(LDFLAGS) %%%f -o %o |>

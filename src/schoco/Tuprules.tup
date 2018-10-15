@@ -1,0 +1,4 @@
+SCHOCO = $(SRC)/schoco
+
+SCHOCO_SRC  = $(SCHOCO)/*.cpp
+SCHOCO_SRC += $(SCHOCO)/*.S
