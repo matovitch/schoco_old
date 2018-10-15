@@ -6,7 +6,8 @@
 #include "schoco/node.hpp"
 
 #include <unordered_set>
-#include <cstddef>
+#include <functional>
+#include <cstdint>
 
 namespace schoco
 {
@@ -169,16 +170,7 @@ private:
         }
     }
 
-    struct NodePtrHasher
-    {
-        std::size_t operator()(const Node* const nodePtr) const
-        {
-            return (reinterpret_cast<std::size_t>(nodePtr) >> 8) * 11400714819323198485llu;
-        }
-    };
-
-
-    using NodePtrSetTraits = robin::table::TTraits<Node*, NodePtrHasher, std::equal_to<Node*>, 3, 4>;
+    using NodePtrSetTraits = robin::table::TTraits<Node*, std::hash<Node*>, std::equal_to<Node*>, 3, 4>;
     using NodePtrSet       = robin::TTable<NodePtrSetTraits>;
 
     NodePtrSet _pendings;
