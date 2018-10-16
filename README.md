@@ -4,6 +4,6 @@
 
 ## What is this thing ?
 
-Schoco is a fast coroutine scheduler based on dynamic dependency graphs. Currently Unix system V ABI only.
+Schoco is a C++ library providing a stackful coroutine scheduler based on a dynamic dependency graphs. It is currently Unix system V ABI (aka. Linux) only.
 
 To be continued...
